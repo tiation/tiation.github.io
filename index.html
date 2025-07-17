@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiation - AI-Powered Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #5a6fd8;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tiation</h1>
+            <p>AI-Powered Solutions & Development Tools</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>AI Agents</h3>
+                <p>Intelligent automation agents for various business processes and workflows.</p>
+                <a href="https://tiation.github.io/tiation-ai-agents" class="project-link">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>CMS Platform</h3>
+                <p>Content Management System with modern features and intuitive interface.</p>
+                <a href="https://tiation.github.io/tiation-cms" class="project-link">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Docker Debian</h3>
+                <p>Optimized Docker configurations and utilities for Debian-based systems.</p>
+                <a href="https://tiation.github.io/tiation-docker-debian" class="project-link">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>GitHub Pages Theme</h3>
+                <p>Custom Jekyll theme for GitHub Pages with modern design and functionality.</p>
+                <a href="https://github.com/tiation/tiation-github-pages-theme" class="project-link">View Repository</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Terminal Workflows</h3>
+                <p>Productivity tools and workflows for terminal-based development environments.</p>
+                <a href="https://github.com/tiation/tiation-terminal-workflows" class="project-link">View Repository</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Mac Zsh Completions</h3>
+                <p>Enhanced command-line completions for macOS Zsh shell environment.</p>
+                <a href="https://github.com/tiation/mac-zsh-completions" class="project-link">View Repository</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Tiation. Visit our <a href="https://github.com/tiation">GitHub Organization</a> for more projects.</p>
+        </div>
+    </div>
+</body>
+</html>
