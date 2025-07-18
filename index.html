@@ -3,281 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiation - AI-Powered Solutions</title>
+    <title>Tiation - Empowering the Future Through AI Innovation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <meta name="description" content="Tiation is more than technology - it's a heartfelt mission to democratize AI and empower communities worldwide through innovative, accessible solutions.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Additional custom styles for the heartfelt design */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: #0a0a0a;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .background-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(0, 255, 128, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 60% 60%, rgba(255, 128, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 90% 10%, rgba(128, 0, 255, 0.07) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
+        .stat-card {
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
-
-        .header h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #00ffff 100%);
+        
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-            position: relative;
         }
-
-        .header h1::after {
+        
+        .stat-label {
+            display: block;
+            margin-top: 0.5rem;
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+        
+        .mission-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-item {
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(26, 26, 46, 0.4);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+        }
+        
+        .value-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .journey-timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 3rem;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .timeline-item::before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            box-shadow: 0 0 10px #00ffff;
+            left: 0.5rem;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: linear-gradient(to bottom, rgba(0, 255, 255, 0.3), transparent);
         }
-
-        .header p {
-            font-size: 1.3rem;
-            color: #b3b3b3;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
+        
+        .timeline-item:last-child::before {
+            display: none;
         }
-
-        .projects-grid {
+        
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .platform-grid, .docs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin: 3rem 0;
         }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2.5rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        
+        .platform-card, .doc-card {
             position: relative;
             overflow: hidden;
         }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 255, 255, 0.3);
-            box-shadow: 
-                0 10px 40px rgba(0, 255, 255, 0.1),
-                0 0 20px rgba(0, 255, 255, 0.05);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-card h3 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .project-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: #00ffff;
-            border-radius: 1px;
-        }
-
-        .project-card p {
-            color: #cccccc;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
-            color: #00ffff;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .project-link:hover {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 255, 255, 0.1) 100%);
-            border-color: rgba(0, 255, 255, 0.4);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .project-link:hover::before {
-            left: 100%;
-        }
-
-        .footer {
+        
+        .card-icon {
+            font-size: 3rem;
             text-align: center;
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            margin-bottom: 1rem;
         }
-
-        .footer p {
-            color: #888888;
-            font-weight: 300;
-        }
-
-        .footer a {
+        
+        .card-link {
+            display: inline-block;
+            margin-top: 1rem;
             color: #00ffff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-
-        .footer a:hover {
-            color: #ffffff;
+        
+        .card-link:hover {
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+        
+        .community-ways, .way-item {
+            margin: 2rem 0;
+        }
+        
+        .way-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #00ffff;
             text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
         }
-
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            color: #000;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+        }
+        
+        .section-intro {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .lead {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        section {
+            margin: 4rem 0;
+            padding: 2rem 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-description {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
         @media (max-width: 768px) {
-            .header h1 {
+            .hero-title {
                 font-size: 2.5rem;
             }
             
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .hero-description {
+                font-size: 1.1rem;
+                padding: 0 1rem;
             }
             
-            .project-card {
-                padding: 2rem;
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .platform-grid, .docs-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-pattern"></div>
-    <div class="container">
-        <div class="header">
-            <h1>Tiation</h1>
-            <p>AI-Powered Solutions & Development Tools</p>
+    <header class="site-header">
+        <div class="wrapper">
+            <h1 class="site-title gradient-text">Tiation</h1>
+            <nav class="site-nav">
+                <a href="#home" class="page-link">Home</a>
+                <a href="#mission" class="page-link">Our Mission</a>
+                <a href="#journey" class="page-link">Our Journey</a>
+                <a href="#platform" class="page-link">Platform</a>
+                <a href="#community" class="page-link">Community</a>
+                <a href="#docs" class="page-link">Documentation</a>
+                <a href="https://github.com/tiation" class="page-link">GitHub</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>AI Agents</h3>
-                <p>Intelligent automation agents for various business processes and workflows.</p>
-                <a href="https://tiation.github.io/tiation-ai-agents" class="project-link">View Project</a>
+    <main class="page-content">
+        <section id="home" class="hero">
+            <div class="wrapper">
+                <h2 class="hero-title pulse">Empowering the Future Through AI Innovation</h2>
+                <p class="hero-description">At Tiation, we believe that artificial intelligence should be a force for good - accessible, ethical, and transformative. Our platform isn't just about code and algorithms; it's about creating meaningful connections between technology and human potential.</p>
+                <div class="hero-stats">
+                    <div class="stat-card neon-glow">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Open Source Projects</span>
+                    </div>
+                    <div class="stat-card neon-glow">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Possibilities</span>
+                    </div>
+                    <div class="stat-card neon-glow">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Shared Vision</span>
+                    </div>
+                </div>
+                <a href="#mission" class="btn btn-primary">Discover Our Mission</a>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>CMS Platform</h3>
-                <p>Content Management System with modern features and intuitive interface.</p>
-                <a href="https://tiation.github.io/tiation-cms" class="project-link">View Project</a>
+        <section id="mission" class="mission">
+            <div class="wrapper">
+                <h2 class="gradient-text">Our Heartfelt Mission</h2>
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <p class="lead">We're not just building an AI platform - we're crafting a movement towards a more inclusive, innovative, and compassionate technological future.</p>
+                        
+                        <div class="mission-values">
+                            <div class="value-item">
+                                <h3>💡 Innovation with Purpose</h3>
+                                <p>Every line of code we write, every algorithm we design, serves a greater purpose - to solve real-world problems and improve lives.</p>
+                            </div>
+                            <div class="value-item">
+                                <h3>🤝 Community-Driven</h3>
+                                <p>We believe in the power of collaboration. Our platform thrives because of our incredible community of developers, dreamers, and changemakers.</p>
+                            </div>
+                            <div class="value-item">
+                                <h3>🌍 Global Impact</h3>
+                                <p>From small startups to enterprise solutions, our goal is to democratize AI access and create positive change worldwide.</p>
+                            </div>
+                            <div class="value-item">
+                                <h3>💚 Ethical AI</h3>
+                                <p>We're committed to developing AI that's transparent, fair, and beneficial for all. Ethics aren't an afterthought - they're foundational.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Docker Debian</h3>
-                <p>Optimized Docker configurations and utilities for Debian-based systems.</p>
-                <a href="https://tiation.github.io/tiation-docker-debian" class="project-link">View Project</a>
+        <section id="journey" class="journey">
+            <div class="wrapper">
+                <h2 class="gradient-text">Our Journey</h2>
+                <div class="journey-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>The Spark</h3>
+                            <p>It all started with a simple question: "What if AI could truly understand and serve humanity?" This question ignited our passion and set us on a path to create something extraordinary.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Building the Foundation</h3>
+                            <p>We began with terminal workflows and automation tools, learning that the most powerful technologies are those that feel natural and intuitive to use.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>The Ecosystem Grows</h3>
+                            <p>From Docker containers to AI agents, each project taught us something new about what it means to create technology that truly serves people.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Today & Tomorrow</h3>
+                            <p>Today, we're building an ecosystem of interconnected tools and platforms. Tomorrow, we're dreaming of AI that makes every interaction more meaningful.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>GitHub Pages Theme</h3>
-                <p>Custom Jekyll theme for GitHub Pages with modern design and functionality.</p>
-                <a href="https://github.com/tiation/tiation-github-pages-theme" class="project-link">View Repository</a>
+        <section id="platform" class="platform">
+            <div class="wrapper">
+                <h2 class="gradient-text">Our Platform Ecosystem</h2>
+                <p class="section-intro">Each component of our platform is designed with love, built with care, and deployed with purpose.</p>
+                
+                <div class="platform-grid">
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Agents</h3>
+                        <p>Intelligent assistants that understand context, learn from interactions, and provide personalized experiences that feel genuinely helpful.</p>
+                        <a href="https://github.com/tiation/tiation-ai-agents" class="card-link">Explore AI Agents</a>
+                    </div>
+                    
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Terminal Workflows</h3>
+                        <p>Beautiful, efficient automation tools that make complex tasks feel simple. Because great technology should feel like magic.</p>
+                        <a href="https://github.com/tiation/tiation-terminal-workflows" class="card-link">Discover Workflows</a>
+                    </div>
+                    
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">🐳</div>
+                        <h3>Docker Solutions</h3>
+                        <p>Enterprise-grade containerization that makes deployment dreams come true. Reliable, scalable, and beautifully orchestrated.</p>
+                        <a href="https://github.com/tiation/tiation-docker-debian" class="card-link">View Docker Tools</a>
+                    </div>
+                    
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">🎲</div>
+                        <h3>Interactive Experiences</h3>
+                        <p>From dice rollers to wellness hubs, we believe technology should bring joy and connection to everyday moments.</p>
+                        <a href="https://github.com/tiation/DiceRollerSimulator" class="card-link">Try Our Apps</a>
+                    </div>
+                    
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Enterprise Solutions</h3>
+                        <p>Robust, scalable platforms designed for organizations that want to harness AI responsibly and effectively.</p>
+                        <a href="https://github.com/tiation/tiation-ai-platform" class="card-link">Enterprise Platform</a>
+                    </div>
+                    
+                    <div class="platform-card feature-card">
+                        <div class="card-icon">💝</div>
+                        <h3>Community Projects</h3>
+                        <p>Initiatives that give back - from legal case studies to economic reform proposals, we're committed to positive social impact.</p>
+                        <a href="https://github.com/tiation/tiation-chase-white-rabbit-ngo" class="card-link">Join Our Cause</a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Terminal Workflows</h3>
-                <p>Productivity tools and workflows for terminal-based development environments.</p>
-                <a href="https://github.com/tiation/tiation-terminal-workflows" class="project-link">View Repository</a>
+        <section id="community" class="community">
+            <div class="wrapper">
+                <h2 class="gradient-text">Join Our Community</h2>
+                <div class="community-content">
+                    <div class="community-text">
+                        <p class="lead">We're more than developers - we're dreamers, builders, and believers in the power of technology to create positive change.</p>
+                        
+                        <div class="community-ways">
+                            <div class="way-item">
+                                <h3>🚀 For Developers</h3>
+                                <p>Contribute to our open-source projects, share your innovations, and help build the future of AI together.</p>
+                            </div>
+                            <div class="way-item">
+                                <h3>🎯 For Entrepreneurs</h3>
+                                <p>Use our platform to bring your AI-powered ideas to life. We provide the tools, you provide the vision.</p>
+                            </div>
+                            <div class="way-item">
+                                <h3>🌟 For Everyone</h3>
+                                <p>Share your feedback, suggest features, and help us understand how AI can better serve humanity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="community-contact">
+                            <h3>Let's Connect</h3>
+                            <p>Have questions, ideas, or just want to chat about the future of AI? We'd love to hear from you.</p>
+                            <div class="contact-info">
+                                <p>📧 <a href="mailto:tiatheone@protonmail.com">tiatheone@protonmail.com</a></p>
+                                <p>🐙 <a href="https://github.com/tiation">github.com/tiation</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Mac Zsh Completions</h3>
-                <p>Enhanced command-line completions for macOS Zsh shell environment.</p>
-                <a href="https://github.com/tiation/mac-zsh-completions" class="project-link">View Repository</a>
+        <section id="docs" class="documentation">
+            <div class="wrapper">
+                <h2 class="gradient-text">Documentation & Resources</h2>
+                <p class="section-intro">Everything you need to get started, from quick tutorials to comprehensive guides.</p>
+                
+                <div class="docs-grid">
+                    <div class="doc-card feature-card">
+                        <h3>📚 Getting Started</h3>
+                        <p>New to Tiation? Start here for a gentle introduction to our platform and philosophy.</p>
+                        <a href="docs/" class="btn">Begin Your Journey</a>
+                    </div>
+                    
+                    <div class="doc-card feature-card">
+                        <h3>🔧 Technical Docs</h3>
+                        <p>Detailed API references, architecture guides, and implementation examples.</p>
+                        <a href="docs/api-reference" class="btn">Technical Resources</a>
+                    </div>
+                    
+                    <div class="doc-card feature-card">
+                        <h3>❓ FAQ & Support</h3>
+                        <p>Quick answers to common questions and troubleshooting guides.</p>
+                        <a href="docs/faq" class="btn">Get Help</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-heading">Tiation</h3>
+                    <p>Empowering the future through AI innovation, one heartfelt connection at a time.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-heading">Connect</h3>
+                    <div class="footer-links">
+                        <a href="https://github.com/tiation">GitHub</a>
+                        <a href="mailto:tiatheone@protonmail.com">Email</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-heading">Projects</h3>
+                    <div class="footer-links">
+                        <a href="https://github.com/tiation/tiation-ai-agents">AI Agents</a>
+                        <a href="https://github.com/tiation/tiation-terminal-workflows">Terminal Workflows</a>
+                        <a href="https://github.com/tiation/tiation-ai-platform">Enterprise Platform</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tiation. Built with 💚 and infinite possibilities.</p>
             </div>
         </div>
-
-        <div class="footer">
-            <p>&copy; 2025 Tiation. Visit our <a href="https://github.com/tiation">GitHub Organization</a> for more projects.</p>
-        </div>
-    </div>
+    </footer>
 </body>
 </html>
