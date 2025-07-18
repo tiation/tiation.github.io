@@ -1,0 +1,111 @@
+# Site settings
+title: "Tiation - Enterprise AI Platform"
+description: "Professional AI platform with enterprise-grade solutions and dark neon interface"
+url: "https://tiation.github.io"
+baseurl: ""
+
+# GitHub Pages settings
+source: "."
+destination: "_site"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Theme and styling
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Navigation
+nav_links:
+  - name: "Home"
+    link: "/"
+  - name: "Documentation"
+    link: "/docs/"
+  - name: "API Reference"
+    link: "/docs/api-reference"
+  - name: "Architecture"
+    link: "/docs/architecture"
+  - name: "User Guide"
+    link: "/docs/user-guide"
+  - name: "FAQ"
+    link: "/docs/faq"
+  - name: "GitHub"
+    link: "https://github.com/tiation"
+
+# Site configuration
+permalink: pretty
+timezone: Australia/Perth
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# SEO
+author: "Tiation"
+email: "tiatheone@protonmail.com"
+github_username: "tiation"
+
+# Social
+social:
+  - name: "GitHub"
+    icon: "fab fa-github"
+    link: "https://github.com/tiation"
+
+# Dark neon theme customization
+custom_css: |
+  :root {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-color: #00ff88;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    color: var(--text-color);
+  }
+  
+  .header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+# Exclude from processing
+exclude:
+  - README.md.backup
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .git
+  - .github
