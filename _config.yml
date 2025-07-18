@@ -1,111 +1,150 @@
-# Site settings
-title: "Tiation - Enterprise AI Platform"
-description: "Professional AI platform with enterprise-grade solutions and dark neon interface"
+# GitHub Pages Configuration
+title: "Tiation Documentation Hub"
+description: "Enterprise-grade centralized documentation for the Tiation ecosystem"
 url: "https://tiation.github.io"
 baseurl: ""
 
-# GitHub Pages settings
-source: "."
-destination: "_site"
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
 
-# Theme and styling
-theme: minima
-markdown: kramdown
-highlighter: rouge
+# Plugin settings
+relative_links:
+  enabled: true
+  collections: true
 
-# Navigation
-nav_links:
-  - name: "Home"
-    link: "/"
-  - name: "Documentation"
-    link: "/docs/"
-  - name: "API Reference"
-    link: "/docs/api-reference"
-  - name: "Architecture"
-    link: "/docs/architecture"
-  - name: "User Guide"
-    link: "/docs/user-guide"
-  - name: "FAQ"
-    link: "/docs/faq"
-  - name: "GitHub"
-    link: "https://github.com/tiation"
+optional_front_matter:
+  remove_originals: true
 
-# Site configuration
-permalink: pretty
-timezone: Australia/Perth
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: true
+
+default_layout:
+  markdown: default
+  html: default
+
+titles_from_headings:
+  enabled: true
+  strip_title: true
+  collections: true
 
 # Collections
 collections:
   docs:
     output: true
     permalink: /:collection/:name/
+  projects:
+    output: true
+    permalink: /:collection/:name/
+  guides:
+    output: true
+    permalink: /:collection/:name/
 
-# Defaults
+# Default settings
 defaults:
-  - scope:
-      path: ""
-      type: "docs"
-    values:
-      layout: "page"
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "page"
+      layout: "default"
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "docs"
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: "docs"
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: "_guides"
+      type: "guides"
+    values:
+      layout: "guide"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Documentation"
+    url: "/docs/"
+  - title: "API Reference"
+    url: "/docs/api-reference/"
+  - title: "Architecture"
+    url: "/docs/architecture/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "GitHub"
+    url: "https://github.com/tiation"
 
 # SEO
-author: "Tiation"
-email: "tiatheone@protonmail.com"
-github_username: "tiation"
+author:
+  name: "Tiation Team"
+  email: "tiatheone@protonmail.com"
+  twitter: "tiation"
+  github: "tiation"
 
-# Social
 social:
-  - name: "GitHub"
-    icon: "fab fa-github"
-    link: "https://github.com/tiation"
+  name: "Tiation"
+  links:
+    - "https://github.com/tiation"
+    - "https://tiation.github.io"
 
-# Dark neon theme customization
-custom_css: |
-  :root {
-    --primary-color: #00ffff;
-    --secondary-color: #ff00ff;
-    --background-color: #0a0a0a;
-    --text-color: #ffffff;
-    --accent-color: #00ff88;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    color: var(--text-color);
-  }
-  
-  .header {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .neon-glow {
-    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+# Enterprise features
+enterprise:
+  support_email: "tiatheone@protonmail.com"
+  status_page: "https://status.tiation.ai"
+  api_docs: "https://tiation.github.io/docs/api-reference/"
+  architecture_docs: "https://tiation.github.io/docs/architecture/"
+  deployment_docs: "https://tiation.github.io/docs/deployment/"
+
+# Theme configuration
+theme_config:
+  primary_color: "#00FFFF"
+  secondary_color: "#FF00FF"
+  accent_color: "#007FFF"
+  background_color: "#0A0A0A"
+  text_color: "#FFFFFF"
+  gradient_start: "#00FFFF"
+  gradient_end: "#FF00FF"
 
 # Exclude from processing
 exclude:
-  - README.md.backup
+  - Gemfile
+  - Gemfile.lock
   - node_modules
-  - package.json
-  - package-lock.json
-  - .git
-  - .github
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md.backup
+  - index_old.html
